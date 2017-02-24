@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText entrada = (EditText)findViewById(R.id.numDE);
         EditText sortida = (EditText)findViewById(R.id.numDS);
-        entrada.setText("0");
-        sortida.setText(calculDivisa());
+
 
 
         //controla si la entrada es modificada i recalcula

@@ -10,23 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.ub.pis2017.marccalvino.appdivises.MainActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_below="@+id/numDE"
-        android:layout_alignLeft="@+id/numDE"
-        android:layout_alignStart="@+id/numDE"
-        android:layout_marginTop="141dp"
-        android:id="@+id/numDS"
-        android:textAlignment="textEnd"
-        android:singleLine="true"
-        android:hint="0"
-        android:clickable="false"
-        android:editable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false" />
+
 
     <Button
         android:text="@string/sw"
@@ -38,7 +22,7 @@
         android:id="@+id/bSwipe" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -53,42 +37,6 @@
         android:hint="0"
         android:textAlignment="viewEnd" />
 
-    <CheckBox
-        android:text="@string/percentCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/numDS"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="64dp"
-        android:id="@+id/introPer" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/numEP"
-        android:singleLine="true"
-        android:textAlignment="textEnd"
-        android:hint="0"
-        android:layout_below="@+id/introPer"
-        android:layout_alignRight="@+id/introPer"
-        android:layout_alignEnd="@+id/introPer" />
-
-    <TextView
-        android:text="@string/d1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/numDS"
-        android:layout_toRightOf="@+id/numDE"
-        android:layout_toEndOf="@+id/numDE"
-        android:id="@+id/tTipusDE"
-        android:textSize="30sp" />
-
     <TextView
         android:text=" %"
         android:layout_width="wrap_content"
@@ -100,14 +48,93 @@
         android:textSize="30sp"
         android:textAlignment="viewStart" />
 
+    <EditText
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/numDS"
+        android:textAlignment="textEnd"
+        android:singleLine="true"
+        android:hint="0"
+        android:clickable="false"
+        android:editable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_above="@+id/bSwipe"
+        android:layout_toRightOf="@+id/introPer"
+        android:layout_toEndOf="@+id/introPer" />
+
+    <TextView
+        android:text="="
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignBaseline="@+id/numDS"
+        android:layout_alignBottom="@+id/numDS"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:text="@string/percentCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="87dp"
+        android:id="@+id/introPer"
+        android:layout_below="@+id/bSwipe"
+        android:layout_alignLeft="@+id/numDE"
+        android:layout_alignStart="@+id/numDE" />
+
+    <TextView
+        android:text="@string/d1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tTipusDE"
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/numDE"
+        android:layout_toRightOf="@+id/numDE"
+        android:layout_toEndOf="@+id/numDE" />
+
     <TextView
         android:text="@string/d2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/numDS"
-        android:layout_toRightOf="@+id/numDS"
-        android:layout_toEndOf="@+id/numDS"
         android:id="@+id/tTipusDS"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_alignTop="@+id/numDS"
+        android:layout_toRightOf="@+id/numDS"
+        android:layout_toEndOf="@+id/numDS" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/numEP"
+        android:singleLine="true"
+        android:textAlignment="textEnd"
+        android:hint="0"
+        android:layout_below="@+id/introPer"
+        android:layout_alignRight="@+id/introPer"
+        android:layout_alignEnd="@+id/introPer" />
+
+    <CheckBox
+        android:text="@string/canviCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numEP"
+        android:layout_alignLeft="@+id/numEP"
+        android:layout_alignStart="@+id/numEP"
+        android:id="@+id/checkBox" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox"
+        android:id="@+id/editText" />
 
 </RelativeLayout>
