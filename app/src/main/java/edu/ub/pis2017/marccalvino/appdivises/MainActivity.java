@@ -78,6 +78,42 @@ public class MainActivity extends AppCompatActivity {
                         perCanv = perCanvEst;
                         EditText sortid = (EditText)findViewById(R.id.numDS);
                         sortid.setText(calculDivisa());
+
+                    }
+                }
+            }
+        });
+
+        EditText canviar = (EditText)findViewById(R.id.entradaCanvi);
+
+        //controla si la entrada del percentatge s'ha modificat
+        canviar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                CheckBox per = (CheckBox)findViewById(R.id.introPer);
+                if (per.isChecked()) {
+                    EditText entradaCan = (EditText)findViewById(R.id.entradaCanvi);
+                    try {
+                        canvi = Double.parseDouble(entradaCan.getText().toString());
+                        EditText sortid = (EditText)findViewById(R.id.numDS);
+                        sortid.setText(calculDivisa());
+                    } catch (NumberFormatException e) {
+                        TextView div1 = (TextView)findViewById(R.id.tTipusDE);
+                        if (div1.getText().toString() == getString(R.string.d1) ) {
+                            canvi=canvied;
+                        } else canvi = canvide;
+                        EditText sortid = (EditText)findViewById(R.id.numDS);
+                        sortid.setText(calculDivisa());
                     }
                 }
             }
@@ -92,10 +128,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 TextView d1 = (TextView)findViewById(R.id.tTipusDE);
                 TextView d2 = (TextView)findViewById(R.id.tTipusDS);
-                d1.setText(R.string.d2);
-                d2.setText(R.string.d1);
-                if (canvi==canvied) canvi=canvide;
-                else canvi=canvied;
+                if (d1.getText() == "€") {d1.setText(R.string.d2); d2.setText(R.string.d1);}
+                else {d2.setText(R.string.d2); d1.setText(R.string.d1);}
+                CheckBox can = (CheckBox)findViewById(R.id.introPer);
+                if (!can.isChecked()) {
+                    if (canvi==canvied) canvi=canvide;
+                    else canvi=canvied;
+                }
                 EditText sortid = (EditText)findViewById(R.id.numDS);
                 sortid.setText(calculDivisa());
             }
