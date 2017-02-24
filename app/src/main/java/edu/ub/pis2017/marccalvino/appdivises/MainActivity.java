@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText entrada = (EditText)findViewById(R.id.numDE);
-        EditText sortida = (EditText)findViewById(R.id.numDS);
 
 
 
@@ -126,6 +125,42 @@ public class MainActivity extends AppCompatActivity {
                     perCanv = perCanvEst;
                     EditText sortid = (EditText)findViewById(R.id.numDS);
                     sortid.setText(calculDivisa());
+                }
+
+            }
+        });
+
+        CheckBox can = (CheckBox)findViewById(R.id.introPer);
+
+
+        // comprova si canvia el check del percentatge
+        can.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (buttonView.isChecked()) {
+                    EditText entradaCan = (EditText)findViewById(R.id.entradaCanvi);
+                    try {
+                        canvi = Double.parseDouble(entradaCan.getText().toString());
+                        EditText sortid = (EditText)findViewById(R.id.numDS);
+                        sortid.setText(calculDivisa());
+                    } catch (NumberFormatException e) {
+                        TextView div1 = (TextView)findViewById(R.id.tTipusDE);
+                        if (div1.getText().toString() == getString(R.string.d1) ) {
+                            canvi=canvied;
+                        } else canvi = canvide;
+                        EditText sortid = (EditText)findViewById(R.id.numDS);
+                        sortid.setText(calculDivisa());
+                        buttonView.setActivated(false);
+                    }
+
+                } else {
+                    TextView div1 = (TextView)findViewById(R.id.tTipusDE);
+                    if (div1.getText().toString() == getString(R.string.d1) ) {
+                        canvi=canvied;
+                    } else canvi = canvide;
+                    EditText sortid = (EditText)findViewById(R.id.numDS);
+                    sortid.setText(calculDivisa());
+                    buttonView.setActivated(false);
                 }
 
             }
