@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppDivises</string>
+    <string name="d1"> €</string>
+    <string name="d2"> $</string>
+    <string name="percentCheck">Introduir percentatge percebut</string>
+    <string name="sw">INVERTIR</string>
+</resources>
